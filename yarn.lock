@@ -53,6 +53,15 @@
     picomatch "^2.3.1"
     slash "^3.0.0"
 
+"@adonisjs/auth@^8.2.3":
+  version "8.2.3"
+  resolved "https://registry.npmjs.org/@adonisjs/auth/-/auth-8.2.3.tgz"
+  integrity sha512-js9e8AHEsNC/8MGvho6MgL+uXr8SlhTg9MJJDWQBBiqsKkT7+H7NMP/pLbuSzYaaf40t2u/OXfq6wXuIC5ZYvw==
+  dependencies:
+    "@poppinss/hooks" "^5.0.3"
+    "@poppinss/utils" "^5.0.0"
+    luxon "^3.0.4"
+
 "@adonisjs/bodyparser@^8.1.7":
   version "8.1.7"
   resolved "https://registry.npmjs.org/@adonisjs/bodyparser/-/bodyparser-8.1.7.tgz"
@@ -1105,7 +1114,7 @@ buffer-from@^1.0.0:
 
 buffer-writer@2.0.0:
   version "2.0.0"
-  resolved "https://registry.yarnpkg.com/buffer-writer/-/buffer-writer-2.0.0.tgz#ce7eb81a38f7829db09c873f2fbb792c0c98ec04"
+  resolved "https://registry.npmjs.org/buffer-writer/-/buffer-writer-2.0.0.tgz"
   integrity sha512-a7ZpuTZU1TRtnwyCNW3I5dc0wWNC3VR9S++Ewyk2HHZdrO3CQJqSpd+95Us590V6AL7JqUAH2IwZ/398PmNFgw==
 
 buffer@^6.0.3:
@@ -2776,14 +2785,9 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-luxon@^3.0.3, luxon@^3.1.0:
+luxon@^3.0.3, luxon@^3.0.4, luxon@^3.1.0, luxon@^3.3.0:
   version "3.3.0"
   resolved "https://registry.npmjs.org/luxon/-/luxon-3.3.0.tgz"
-  integrity sha512-An0UCfG/rSiqtAIiBPO0Y9/zAnHUZxAMiCpTd5h2smgsj7GGmcenvrvww2cqNA8/4A5ZrD1gJpHN2mIHZQF+Mg==
-
-luxon@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/luxon/-/luxon-3.3.0.tgz#d73ab5b5d2b49a461c47cedbc7e73309b4805b48"
   integrity sha512-An0UCfG/rSiqtAIiBPO0Y9/zAnHUZxAMiCpTd5h2smgsj7GGmcenvrvww2cqNA8/4A5ZrD1gJpHN2mIHZQF+Mg==
 
 macroable@^7.0.2:
@@ -3239,7 +3243,7 @@ p-try@^2.0.0:
 
 packet-reader@1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/packet-reader/-/packet-reader-1.0.0.tgz#9238e5480dedabacfe1fe3f2771063f164157d74"
+  resolved "https://registry.npmjs.org/packet-reader/-/packet-reader-1.0.0.tgz"
   integrity sha512-HAKu/fG3HpHFO0AA8WE8q2g+gBJaZ9MG7fcKk+IJPLTGAD6Psw4443l+9DGRbOIh3/aXr7Phy0TjilYivJo5XQ==
 
 param-case@^3.0.4:
@@ -3340,22 +3344,22 @@ pg-connection-string@2.5.0, pg-connection-string@^2.5.0:
 
 pg-int8@1.0.1:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/pg-int8/-/pg-int8-1.0.1.tgz#943bd463bf5b71b4170115f80f8efc9a0c0eb78c"
+  resolved "https://registry.npmjs.org/pg-int8/-/pg-int8-1.0.1.tgz"
   integrity sha512-WCtabS6t3c8SkpDBUlb1kjOs7l66xsGdKpIPZsg4wR+B3+u9UAum2odSsF9tnvxg80h4ZxLWMy4pRjOsFIqQpw==
 
 pg-pool@^3.6.0:
   version "3.6.0"
-  resolved "https://registry.yarnpkg.com/pg-pool/-/pg-pool-3.6.0.tgz#3190df3e4747a0d23e5e9e8045bcd99bda0a712e"
+  resolved "https://registry.npmjs.org/pg-pool/-/pg-pool-3.6.0.tgz"
   integrity sha512-clFRf2ksqd+F497kWFyM21tMjeikn60oGDmqMT8UBrynEwVEX/5R5xd2sdvdo1cZCFlguORNpVuqxIj+aK4cfQ==
 
 pg-protocol@^1.6.0:
   version "1.6.0"
-  resolved "https://registry.yarnpkg.com/pg-protocol/-/pg-protocol-1.6.0.tgz#4c91613c0315349363af2084608db843502f8833"
+  resolved "https://registry.npmjs.org/pg-protocol/-/pg-protocol-1.6.0.tgz"
   integrity sha512-M+PDm637OY5WM307051+bsDia5Xej6d9IR4GwJse1qA1DIhiKlksvrneZOYQq42OM+spubpcNYEo2FcKQrDk+Q==
 
 pg-types@^2.1.0:
   version "2.2.0"
-  resolved "https://registry.yarnpkg.com/pg-types/-/pg-types-2.2.0.tgz#2d0250d636454f7cfa3b6ae0382fdfa8063254a3"
+  resolved "https://registry.npmjs.org/pg-types/-/pg-types-2.2.0.tgz"
   integrity sha512-qTAAlrEsl8s4OiEQY69wDvcMIdQN6wdz5ojQiOy6YRMuynxenON0O5oCpJI6lshc6scgAY8qvJ2On/p+CXY0GA==
   dependencies:
     pg-int8 "1.0.1"
@@ -3366,7 +3370,7 @@ pg-types@^2.1.0:
 
 pg@^8.10.0:
   version "8.10.0"
-  resolved "https://registry.yarnpkg.com/pg/-/pg-8.10.0.tgz#5b8379c9b4a36451d110fc8cd98fc325fe62ad24"
+  resolved "https://registry.npmjs.org/pg/-/pg-8.10.0.tgz"
   integrity sha512-ke7o7qSTMb47iwzOSaZMfeR7xToFdkE71ifIipOAAaLIM0DYzfOAXlgFFmYUIE2BcJtvnVlGCID84ZzCegE8CQ==
   dependencies:
     buffer-writer "2.0.0"
@@ -3379,7 +3383,7 @@ pg@^8.10.0:
 
 pgpass@1.x:
   version "1.0.5"
-  resolved "https://registry.yarnpkg.com/pgpass/-/pgpass-1.0.5.tgz#9b873e4a564bb10fa7a7dbd55312728d422a223d"
+  resolved "https://registry.npmjs.org/pgpass/-/pgpass-1.0.5.tgz"
   integrity sha512-FdW9r/jQZhSeohs1Z3sI1yxFQNFvMcnmfuj4WBMUTxOrAyLMaTcE1aAMBiTlbMNaXvBCQuVi0R7hd8udDSP7ug==
   dependencies:
     split2 "^4.1.0"
@@ -3474,22 +3478,22 @@ posix-character-classes@^0.1.0:
 
 postgres-array@~2.0.0:
   version "2.0.0"
-  resolved "https://registry.yarnpkg.com/postgres-array/-/postgres-array-2.0.0.tgz#48f8fce054fbc69671999329b8834b772652d82e"
+  resolved "https://registry.npmjs.org/postgres-array/-/postgres-array-2.0.0.tgz"
   integrity sha512-VpZrUqU5A69eQyW2c5CA1jtLecCsN2U/bD6VilrFDWq5+5UIEVO7nazS3TEcHf1zuPYO/sqGvUvW62g86RXZuA==
 
 postgres-bytea@~1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/postgres-bytea/-/postgres-bytea-1.0.0.tgz#027b533c0aa890e26d172d47cf9ccecc521acd35"
+  resolved "https://registry.npmjs.org/postgres-bytea/-/postgres-bytea-1.0.0.tgz"
   integrity sha512-xy3pmLuQqRBZBXDULy7KbaitYqLcmxigw14Q5sj8QBVLqEwXfeybIKVWiqAXTlcvdvb0+xkOtDbfQMOf4lST1w==
 
 postgres-date@~1.0.4:
   version "1.0.7"
-  resolved "https://registry.yarnpkg.com/postgres-date/-/postgres-date-1.0.7.tgz#51bc086006005e5061c591cee727f2531bf641a8"
+  resolved "https://registry.npmjs.org/postgres-date/-/postgres-date-1.0.7.tgz"
   integrity sha512-suDmjLVQg78nMK2UZ454hAG+OAW+HQPZ6n++TNDUX+L0+uUlLywnoxJKDou51Zm+zTCjrCl0Nq6J9C5hP9vK/Q==
 
 postgres-interval@^1.1.0:
   version "1.2.0"
-  resolved "https://registry.yarnpkg.com/postgres-interval/-/postgres-interval-1.2.0.tgz#b460c82cb1587507788819a06aa0fffdb3544695"
+  resolved "https://registry.npmjs.org/postgres-interval/-/postgres-interval-1.2.0.tgz"
   integrity sha512-9ZhXKM/rw350N1ovuWHbGxnGh/SNJ4cnxHiM0rxE4VN41wsg8P8zWn9hv/buK00RP4WvlOyr/RBDiptyxVbkZQ==
   dependencies:
     xtend "^4.0.0"
@@ -4383,6 +4387,11 @@ util-deprecate@^1.0.1:
   resolved "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz"
   integrity sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==
 
+uuid@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-9.0.0.tgz#592f550650024a38ceb0c562f2f6aa435761efb5"
+  integrity sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==
+
 valid-url@~1.0.9:
   version "1.0.9"
   resolved "https://registry.npmjs.org/valid-url/-/valid-url-1.0.9.tgz"
@@ -4447,7 +4456,7 @@ wrappy@1:
 
 xtend@^4.0.0:
   version "4.0.2"
-  resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.2.tgz#bb72779f5fa465186b1f438f674fa347fdb5db54"
+  resolved "https://registry.npmjs.org/xtend/-/xtend-4.0.2.tgz"
   integrity sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==
 
 yallist@^2.1.2:
