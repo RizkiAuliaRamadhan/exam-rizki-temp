@@ -27,10 +27,11 @@ export default class CreateUserValidator {
     nama_lengkap: schema.string({ trim: true }),
     email: schema.string({ trim: true }, [rules.email()]),
     password: schema.string({ trim: true }, [rules.minLength(6), rules.confirmed()]),
-    jenis_kelamin: schema.string.optional({ trim: true }),
+    jenis_kelamin: schema.enum(['p', 'l']),
     tanggal_lahir: schema.string.optional({ trim: true }),
     alamat: schema.string.optional({ trim: true }),
     no_telepon: schema.string.optional({ trim: true }),
+    role: schema.enum.optional(['trainer', 'student']),
     class_id: schema.string.optional({ trim: true }, ([
       rules.uuid(),
       rules.exists({table: 'classes', column: 'id'}),

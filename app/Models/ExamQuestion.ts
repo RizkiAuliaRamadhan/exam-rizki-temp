@@ -8,8 +8,14 @@ export default class ExamQuestion extends BaseModel {
   @column({ isPrimary: true })
   public id: string
 
+  @column()
+  public questionId: string
+
   @hasOne(() => Question)
   public question: HasOne<typeof Question>
+
+  @column()
+  public examId: string
 
   @hasMany(() => Exam)
   public exams: HasMany<typeof Exam>

@@ -14,6 +14,9 @@ export default class TrainerClass extends BaseModel {
   @belongsTo(() => User)
   public trainer: BelongsTo<typeof User>
 
+  @column()
+  public classId: string
+
   @hasOne(() => Class)
   public class: HasOne<typeof Class>
 

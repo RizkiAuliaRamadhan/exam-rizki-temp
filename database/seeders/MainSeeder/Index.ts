@@ -17,10 +17,11 @@ export default class extends BaseSeeder {
   public async run () {
     // Write your database queries inside the run method
     await this.runSeeder(await import('../ClassSeeder'))
-    // await this.runSeeder(await import('../us')) //user
-    // await this.runSeeder(await import('../tra')) //trainer
+    await this.runSeeder(await import('../UserSeeder'))
+    await this.runSeeder(await import('../TrainerClassesSeeder'))
     await this.runSeeder(await import('../QuestionBankSeeder'))
     await this.runSeeder(await import('../QuestionSeeder'))
     await this.runSeeder(await import('../ExamSeeder'))
+    await this.runSeeder(await import('../ExamQuestionSeeder'))
   }
 }
