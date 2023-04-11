@@ -6,6 +6,7 @@ export default class extends BaseSeeder {
   public async run() {
     // Write your database queries inside the run method
     console.log("=====> START SEEDER USERS");
+    
     const birthday = (y: number, m: number, d: number) => {
       return new Date(y, m, d)
     }
@@ -105,6 +106,7 @@ export default class extends BaseSeeder {
         classId: "08cc4b48-0b27-4cac-b82f-7b5e626fb671" //12 IPA
       },
     ])
+
     console.log("=====> DONE SEEDER USERS");
   }
 }

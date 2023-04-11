@@ -1,8 +1,9 @@
 import { DateTime } from 'luxon'
 import Hash from '@ioc:Adonis/Core/Hash'
-import { column, beforeSave, BaseModel, beforeCreate, belongsTo, BelongsTo } from '@ioc:Adonis/Lucid/Orm'
+import { column, beforeSave, BaseModel, beforeCreate, belongsTo, BelongsTo, hasMany, HasMany } from '@ioc:Adonis/Lucid/Orm'
 import { v4 as uuid } from 'uuid'
 import Class from './Class'
+import Token from './Token'
 
 export default class User extends BaseModel {
   @column({ isPrimary: true })
@@ -35,6 +36,9 @@ export default class User extends BaseModel {
   @column()
   public rememberMeToken: string | null
 
+  @hasMany(() => Token)
+  public tokens: HasMany<typeof Token>;
+
   @column()
   public classId: string | null
 
@@ -52,9 +56,6 @@ export default class User extends BaseModel {
     if (user.$dirty.password) {
       user.password = await Hash.make(user.password)
     }
-    if (user.role == 'trainer') {
-      user.classId = null
-    }
   }
 
   @beforeCreate()
@@ -62,5 +63,7 @@ export default class User extends BaseModel {
     if (!user.id) {
       user.id = uuid()
     }
+    user.role = 'student'
+    user.classId = null
   }
 }

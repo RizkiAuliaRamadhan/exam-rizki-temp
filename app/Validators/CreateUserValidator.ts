@@ -28,7 +28,7 @@ export default class CreateUserValidator {
     email: schema.string({ trim: true }, [rules.email()]),
     password: schema.string({ trim: true }, [rules.minLength(6), rules.confirmed()]),
     jenis_kelamin: schema.enum(['p', 'l']),
-    tanggal_lahir: schema.string.optional({ trim: true }),
+    tanggal_lahir: schema.date.optional(),
     alamat: schema.string.optional({ trim: true }),
     no_telepon: schema.string.optional({ trim: true }),
     role: schema.enum.optional(['trainer', 'student']),
