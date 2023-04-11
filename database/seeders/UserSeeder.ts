@@ -13,6 +13,17 @@ export default class extends BaseSeeder {
 
     await User.createMany([
       {
+        id: "63890585-0c78-4d79-a532-df552681a870",
+        email: "admin@getnada.com",
+        password: "admin123",
+        nama_lengkap: "super admin",
+        tanggal_lahir: DateTime.fromJSDate(birthday(1999, 1, 17)),
+        jenis_kelamin: "l",
+        alamat: "Banjarnegara",
+        no_telepon: "085811235654",
+        role: "admin",
+      },
+      {
         id: "47d65606-4946-495b-b5a1-194f154864a8",
         email: "rizki@getnada.com",
         password: "123456",

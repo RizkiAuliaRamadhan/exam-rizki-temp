@@ -28,5 +28,11 @@ Route.post('/register', 'UsersController.register')
 Route.post('/login', 'UsersController.login')
 
 Route.group(() => {
-  Route.post('logout', 'UsersController.logout')
+  Route.post('/logout', 'UsersController.logout')
+  Route.shallowResource('users', 'UsersController').apiOnly().middleware({
+    'show': 'checkRole:*',
+    'index': 'checkRole:admin,trainer',
+    'update': 'checkRole:*',
+    'destroy': 'checkRole:admin'
+  })
 }).middleware(['auth'])

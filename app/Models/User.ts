@@ -56,6 +56,14 @@ export default class User extends BaseModel {
     if (user.$dirty.password) {
       user.password = await Hash.make(user.password)
     }
+
+    if (!user.role) {
+      user.role = 'student'
+    }
+
+    if (user.role === 'trainer') {
+      user.classId = null
+    }
   }
 
   @beforeCreate()
@@ -63,7 +71,5 @@ export default class User extends BaseModel {
     if (!user.id) {
       user.id = uuid()
     }
-    user.role = 'student'
-    user.classId = null
   }
 }

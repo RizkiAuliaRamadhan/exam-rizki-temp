@@ -28,14 +28,16 @@ export default class CreateUserValidator {
     email: schema.string({ trim: true }, [rules.email()]),
     password: schema.string({ trim: true }, [rules.minLength(6), rules.confirmed()]),
     jenis_kelamin: schema.enum(['p', 'l']),
-    tanggal_lahir: schema.date.optional(),
+    tanggal_lahir: schema.date.optional({
+      format: 'yyyy-MM-dd HH:mm:ss',
+    }),
     alamat: schema.string.optional({ trim: true }),
     no_telepon: schema.string.optional({ trim: true }),
     role: schema.enum.optional(['trainer', 'student']),
     class_id: schema.string.optional({ trim: true }, ([
       rules.uuid(),
-      rules.exists({table: 'classes', column: 'id'}),
-      rules.unique({table: 'users', column: 'class_id'}),
+      rules.exists({ table: 'classes', column: 'id' }),
+      rules.unique({ table: 'users', column: 'class_id' }),
     ])),
   })
 

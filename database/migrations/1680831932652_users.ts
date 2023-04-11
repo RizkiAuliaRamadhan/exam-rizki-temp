@@ -14,7 +14,7 @@ export default class extends BaseSchema {
       table.enum('jenis_kelamin', ['l', 'p'])
       table.text('alamat')
       table.string('no_telepon').unique()
-      table.enum('role', ['trainer', 'student']).defaultTo('trainer')
+      table.enum('role', ['trainer', 'student', 'admin']).defaultTo('trainer')
 
       table.uuid('class_id').references('classes.id').onUpdate('cascade').onDelete('cascade')
 
