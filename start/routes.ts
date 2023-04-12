@@ -29,10 +29,43 @@ Route.post('/login', 'UsersController.login')
 
 Route.group(() => {
   Route.post('/logout', 'UsersController.logout')
+
   Route.shallowResource('users', 'UsersController').apiOnly().middleware({
     'show': 'checkRole:*',
     'index': 'checkRole:admin,trainer',
     'update': 'checkRole:*',
     'destroy': 'checkRole:admin'
+  })
+
+  Route.shallowResource('/classes', 'ClassesController').apiOnly().middleware({
+    'show': 'checkRole:*',
+    'index': 'checkRole:admin,trainer',
+    'create': 'checkRole:admin,trainer',
+    'update': 'checkRole:admin,trainer',
+    'destroy': 'checkRole:admin,trainer'
+  })
+
+  Route.shallowResource('/trainer-classes', 'TrainerClassesController').apiOnly().middleware({
+    'show': 'checkRole:*',
+    'index': 'checkRole:admin,trainer',
+    'create': 'checkRole:admin,trainer',
+    'update': 'checkRole:admin,trainer',
+    'destroy': 'checkRole:admin,trainer'
+  })
+
+  Route.shallowResource('/question-banks', 'QuestionBanksController').apiOnly().middleware({
+    'show': 'checkRole:trainer',
+    'index': 'checkRole:trainer',
+    'create': 'checkRole:trainer',
+    'update': 'checkRole:trainer',
+    'destroy': 'checkRole:trainer'
+  })
+
+  Route.shallowResource('question-banks.questions', 'QuestionsController').apiOnly().middleware({
+    'show': 'checkRole:trainer',
+    'index': 'checkRole:trainer',
+    'create': 'checkRole:trainer',
+    'update': 'checkRole:trainer',
+    'destroy': 'checkRole:trainer'
   })
 }).middleware(['auth'])

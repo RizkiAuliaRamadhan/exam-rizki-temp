@@ -30,7 +30,7 @@ export default class Question extends BaseModel {
   public is_private: Boolean 
 
   @column()
-  public trainerId: string
+  public userId: string
 
   @belongsTo(() => User)
   public trainer: BelongsTo<typeof User>

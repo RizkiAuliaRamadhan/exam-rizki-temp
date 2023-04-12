@@ -14,7 +14,7 @@ export default class extends BaseSchema {
       table.string('jawaban', 1)
       table.boolean('is_private').defaultTo(false)
 
-      table.uuid('trainer_id').references('users.id').onUpdate('cascade').onDelete('cascade')
+      table.uuid('user_id').references('users.id').onUpdate('cascade').onDelete('cascade')
       table.uuid('question_bank_id').references('question_banks.id').onUpdate('cascade').onDelete('cascade')
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL

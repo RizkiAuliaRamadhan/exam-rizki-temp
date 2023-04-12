@@ -16,7 +16,7 @@ export default class extends BaseSeeder {
         pilihan_d: "Monitor",
         jawaban: "a",
         is_private: false,
-        trainerId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
+        userId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },
       {
@@ -28,7 +28,7 @@ export default class extends BaseSeeder {
         pilihan_d: "Sistem bilangan heksadesimal",
         jawaban: "b",
         is_private: false,
-        trainerId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
+        userId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },
       {
@@ -40,7 +40,7 @@ export default class extends BaseSeeder {
         pilihan_d: "Adobe Illustrator",
         jawaban: "c",
         is_private: false,
-        trainerId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
+        userId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },
       {
@@ -52,7 +52,7 @@ export default class extends BaseSeeder {
         pilihan_d: "Menyimpan data pada hard disk",
         jawaban: "b",
         is_private: false,
-        trainerId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
+        userId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },
       {
@@ -64,7 +64,7 @@ export default class extends BaseSeeder {
         pilihan_d: "Printer",
         jawaban: "c",
         is_private: false,
-        trainerId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
+        userId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },
       {
@@ -76,7 +76,7 @@ export default class extends BaseSeeder {
         pilihan_d: "WLAN",
         jawaban: "c",
         is_private: true,
-        trainerId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
+        userId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },
       {
@@ -88,7 +88,7 @@ export default class extends BaseSeeder {
         pilihan_d: "SQL",
         jawaban: "c",
         is_private: true,
-        trainerId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
+        userId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },
       {
@@ -100,7 +100,7 @@ export default class extends BaseSeeder {
         pilihan_d: "Hub",
         jawaban: "b",
         is_private: true,
-        trainerId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
+        userId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },
       {
@@ -112,7 +112,7 @@ export default class extends BaseSeeder {
         pilihan_d: "Menyimpan data tanpa backup",
         jawaban: "b",
         is_private: true,
-        trainerId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
+        userId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },
       {
@@ -124,7 +124,7 @@ export default class extends BaseSeeder {
         pilihan_d: "Hard disk",
         jawaban: "a",
         is_private: true,
-        trainerId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
+        userId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },
 
@@ -140,7 +140,7 @@ export default class extends BaseSeeder {
         pilihan_d: "Adobe Illustrator",
         jawaban: "b",
         is_private: false,
-        trainerId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
+        userId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },
       {
@@ -152,7 +152,7 @@ export default class extends BaseSeeder {
         pilihan_d: "Google Chrome",
         jawaban: "a",
         is_private: false,
-        trainerId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
+        userId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },
       {
@@ -164,7 +164,7 @@ export default class extends BaseSeeder {
         pilihan_d: "Google Chrome",
         jawaban: "c",
         is_private: false,
-        trainerId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
+        userId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },
       {
@@ -176,7 +176,7 @@ export default class extends BaseSeeder {
         pilihan_d: "SSH",
         jawaban: "c",
         is_private: false,
-        trainerId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
+        userId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },
       {
@@ -188,7 +188,7 @@ export default class extends BaseSeeder {
         pilihan_d: "Volt (V)",
         jawaban: "a",
         is_private: false,
-        trainerId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
+        userId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },
       {
@@ -200,7 +200,7 @@ export default class extends BaseSeeder {
         pilihan_d: "Ring",
         jawaban: "a",
         is_private: true,
-        trainerId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
+        userId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },
       {
@@ -212,7 +212,7 @@ export default class extends BaseSeeder {
         pilihan_d: "Distributed Denial of Service (DDoS) Protection",
         jawaban: "d",
         is_private: true,
-        trainerId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
+        userId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },
       {
@@ -224,7 +224,7 @@ export default class extends BaseSeeder {
         pilihan_d: "Motherboard",
         jawaban: "c",
         is_private: true,
-        trainerId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
+        userId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },
       {
@@ -236,7 +236,7 @@ export default class extends BaseSeeder {
         pilihan_d: "VGA",
         jawaban: "C",
         is_private: true,
-        trainerId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
+        userId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },
       {
@@ -248,7 +248,7 @@ export default class extends BaseSeeder {
         pilihan_d: "Google Chrome",
         jawaban: "b",
         is_private: true,
-        trainerId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
+        userId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },
     ])

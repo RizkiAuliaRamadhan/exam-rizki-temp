@@ -36,12 +36,10 @@ export default class UpdateQuestionValidator {
     trainer_id: schema.string.optional({ trim: true }, ([
       rules.uuid(),
       rules.exists({table: 'users', column: 'id'}),
-      rules.unique({table: 'questions', column: 'trainer_id'}),
     ])),
     question_bank_id: schema.string.optional({ trim: true }, ([
       rules.uuid(),
       rules.exists({table: 'question_banks', column: 'id'}),
-      rules.unique({table: 'questions', column: 'question_bank_id'}),
     ])),
   })
 

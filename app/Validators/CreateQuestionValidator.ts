@@ -33,15 +33,13 @@ export default class CreateQuestionValidator {
       rules.maxLength(1)
     ])),
     is_private: schema.boolean(),
-    trainer_id: schema.string({ trim: true }, ([
+    user_id: schema.string({ trim: true }, ([
       rules.uuid(),
       rules.exists({table: 'users', column: 'id'}),
-      rules.unique({table: 'questions', column: 'trainer_id'}),
     ])),
     question_bank_id: schema.string({ trim: true }, ([
       rules.uuid(),
       rules.exists({table: 'question_banks', column: 'id'}),
-      rules.unique({table: 'questions', column: 'question_bank_id'}),
     ])),
   })
 

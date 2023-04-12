@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon'
-import { BaseModel, BelongsTo, HasOne, beforeCreate, belongsTo, column, hasOne } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, BelongsTo, beforeCreate, belongsTo, column } from '@ioc:Adonis/Lucid/Orm'
 import Class from './Class'
 import User from './User'
 import { v4 as uuid } from 'uuid'
@@ -12,13 +12,13 @@ export default class TrainerClass extends BaseModel {
   public trainerId: string
 
   @belongsTo(() => User)
-  public trainer: BelongsTo<typeof User>
+  public user: BelongsTo<typeof User>
 
   @column()
   public classId: string
 
-  @hasOne(() => Class)
-  public class: HasOne<typeof Class>
+  @belongsTo(() => Class)
+  public class: BelongsTo<typeof Class>
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
