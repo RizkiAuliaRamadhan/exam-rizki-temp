@@ -4,11 +4,16 @@ import CreateQuestionBankValidator from 'App/Validators/CreateQuestionBankValida
 import UpdateQuestionBankValidator from 'App/Validators/UpdateQuestionBankValidator';
 
 export default class QuestionBanksController {
-  public async index({ response }: HttpContextContract) {
+  public async index({ response, auth }: HttpContextContract) {
     try {
       const data = await QuestionBank
         .query()
         .select('id', 'nama')
+        .preload('soal', query => query
+          .select('id', 'pertanyaan', 'pilihan_a', 'pilihan_b', 'pilihan_c', 'pilihan_d', 'jawaban', 'is_private', 'user_id')
+          .where('user_id', '=', auth.user!.id)
+          .orWhere('is_private', '=', false)
+        )
 
       response.ok({
         message: "Berhasil mengambil data QuestionBanks",
@@ -56,6 +61,8 @@ export default class QuestionBanksController {
         .query()
         .where('id', '=', id)
         .select('id', 'nama')
+        .preload('soal', query => query
+          .select('id', 'pertanyaan', 'pilihan_a', 'pilihan_b', 'pilihan_c', 'pilihan_d', 'jawaban', 'is_private', 'user_id'))
 
       response.ok({
         message: "Berhasil mengambil data detail QuestionBank",

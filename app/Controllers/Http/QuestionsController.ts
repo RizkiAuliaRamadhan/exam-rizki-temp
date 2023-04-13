@@ -14,7 +14,7 @@ export default class QuestionsController {
         .where('user_id', '=', id_auth)
         .where('question_bank_id', '=', params.question_bank_id)
         .orWhere('is_private', '=', false)
-        .preload('trainer', query => query.select('id', 'nama_lengkap'))
+        .preload('user', query => query.select('id', 'nama_lengkap'))
         .preload('questionBank', query => query.select('id', 'nama'))
 
       response.ok({
@@ -64,7 +64,9 @@ export default class QuestionsController {
         .query()
         .where('id', '=', id)
         .andWhere('user_id', '=', id_auth)
-        .select('*')
+        .select('id', 'pertanyaan', 'pilihan_a', 'pilihan_b', 'pilihan_c', 'pilihan_d', 'jawaban', 'is_private', 'user_id', 'question_bank_id')
+        .preload('user', query => query.select('id', 'nama_lengkap'))
+        .preload('questionBank', query => query.select('id', 'nama'))
 
       if (data.length == 0) {
         return response.status(403).json({ message: 'You are not authorized to access this data' })

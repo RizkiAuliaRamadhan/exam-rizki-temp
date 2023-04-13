@@ -33,7 +33,7 @@ export default class Question extends BaseModel {
   public userId: string
 
   @belongsTo(() => User)
-  public trainer: BelongsTo<typeof User>
+  public user: BelongsTo<typeof User>
 
   @column()
   public questionBankId: string

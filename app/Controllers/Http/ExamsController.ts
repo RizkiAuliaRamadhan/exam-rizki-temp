@@ -61,7 +61,11 @@ export default class ExamsController {
       const data = await Exam
         .query()
         .where('id', '=', id)
-        .select('*')
+        .select('id', 'nama_ujian', 'waktu_mulai', 'waktu_selesai', 'durasi')
+        .preload('soal_ujian',
+          query => query.select('question_id')
+            .preload('soal',
+              query => query.select('pertanyaan', 'pilihan_a', 'pilihan_b', 'pilihan_c', 'pilihan_d')))
 
       response.ok({
         message: "Berhasil mengambil data Exams",
