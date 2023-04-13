@@ -9,7 +9,7 @@ export default class TrainerClass extends BaseModel {
   public id: string
 
   @column()
-  public trainerId: string
+  public userId: string
 
   @belongsTo(() => User)
   public user: BelongsTo<typeof User>

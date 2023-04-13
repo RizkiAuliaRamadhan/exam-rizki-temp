@@ -4,14 +4,15 @@ import CreateQuestionValidator from 'App/Validators/CreateQuestionValidator';
 import UpdateQuestionValidator from 'App/Validators/UpdateQuestionValidator';
 
 export default class QuestionsController {
-  public async index({ response, auth }: HttpContextContract) {
+  public async index({ response, auth, params }: HttpContextContract) {
     try {
       const id_auth = auth.user!.id
 
       const data = await Question
         .query()
-        .select('*')
+        .select('pertanyaan', 'pilihan_a', 'pilihan_b', 'pilihan_c', 'pilihan_d', 'jawaban', 'is_private', 'question_bank_id', 'user_id')
         .where('user_id', '=', id_auth)
+        .where('question_bank_id', '=', params.question_bank_id)
         .orWhere('is_private', '=', false)
         .preload('trainer', query => query.select('id', 'nama_lengkap'))
         .preload('questionBank', query => query.select('id', 'nama'))

@@ -45,12 +45,12 @@ Route.group(() => {
     'destroy': 'checkRole:admin,trainer'
   })
 
-  Route.shallowResource('/trainer-classes', 'TrainerClassesController').apiOnly().middleware({
-    'show': 'checkRole:*',
-    'index': 'checkRole:admin,trainer',
-    'create': 'checkRole:admin,trainer',
-    'update': 'checkRole:admin,trainer',
-    'destroy': 'checkRole:admin,trainer'
+  Route.shallowResource('classes.trainer-classes', 'TrainerClassesController').apiOnly().middleware({
+    'show': 'checkRole:trainer',
+    'index': 'checkRole:trainer',
+    'create': 'checkRole:trainer',
+    'update': 'checkRole:trainer',
+    'destroy': 'checkRole:trainer'
   })
 
   Route.shallowResource('/question-banks', 'QuestionBanksController').apiOnly().middleware({
@@ -62,6 +62,14 @@ Route.group(() => {
   })
 
   Route.shallowResource('question-banks.questions', 'QuestionsController').apiOnly().middleware({
+    'show': 'checkRole:trainer',
+    'index': 'checkRole:trainer',
+    'create': 'checkRole:trainer',
+    'update': 'checkRole:trainer',
+    'destroy': 'checkRole:trainer'
+  })
+
+  Route.shallowResource('classes.exams', 'ExamsController').apiOnly().middleware({
     'show': 'checkRole:trainer',
     'index': 'checkRole:trainer',
     'create': 'checkRole:trainer',

@@ -24,15 +24,9 @@ export default class CreateTrainerClassValidator {
    *    ```
    */
   public schema = schema.create({
-    trainer_id: schema.string({ trim: true }, ([
+    user_id: schema.string({ trim: true }, ([
       rules.uuid(),
       rules.exists({table: 'users', column: 'id'}),
-      rules.unique({table: 'trainer_classes', column: 'trainer_id'}),
-    ])),
-    class_id: schema.string({ trim: true }, ([
-      rules.uuid(),
-      rules.exists({table: 'classes', column: 'id'}),
-      rules.unique({table: 'trainer_classes', column: 'class_id'}),
     ])),
   })
 

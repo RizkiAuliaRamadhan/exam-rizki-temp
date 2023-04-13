@@ -21,10 +21,10 @@ export default class Exam extends BaseModel {
   public durasi: Number
 
   @column()
-  public trainerId: string
+  public userId: string
 
   @belongsTo(() => User)
-  public trainer: BelongsTo<typeof User>
+  public user: BelongsTo<typeof User>
 
   @column()
   public classId: string

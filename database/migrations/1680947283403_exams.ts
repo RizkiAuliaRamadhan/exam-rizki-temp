@@ -11,7 +11,7 @@ export default class extends BaseSchema {
       table.datetime('waktu_selesai')
       table.integer('durasi')
 
-      table.uuid('trainer_id').references('users.id').onUpdate('cascade').onDelete('cascade')
+      table.uuid('user_id').references('users.id').onUpdate('cascade').onDelete('cascade')
       table.uuid('class_id').references('classes.id').onUpdate('cascade').onDelete('cascade')
 
       /**

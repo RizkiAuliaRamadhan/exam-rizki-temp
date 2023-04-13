@@ -1,4 +1,4 @@
-import { schema, CustomMessages, rules } from '@ioc:Adonis/Core/Validator'
+import { schema, CustomMessages } from '@ioc:Adonis/Core/Validator'
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 export default class CreateExamValidator {
@@ -26,23 +26,12 @@ export default class CreateExamValidator {
   public schema = schema.create({
     nama_ujian: schema.string({ trim: true }),
     waktu_mulai: schema.date({
-      format: 'YYYY-MM-DD HH:mm:ss',
+      format: 'yyyy-MM-dd HH:mm:ss',
     }),
     waktu_selesai: schema.date({
-      format: 'YYYY-MM-DD HH:mm:ss',
+      format: 'yyyy-MM-dd HH:mm:ss',
     }),
     durasi: schema.number(),
-    
-    trainer_id: schema.string({ trim: true }, ([
-      rules.uuid(),
-      rules.exists({table: 'users', column: 'id'}),
-      rules.unique({table: 'exams', column: 'trainer_id'}),
-    ])),
-    class_id: schema.string({ trim: true }, ([
-      rules.uuid(),
-      rules.exists({table: 'classes', column: 'id'}),
-      rules.unique({table: 'exams', column: 'exam_id'}),
-    ])),
   })
 
   /**

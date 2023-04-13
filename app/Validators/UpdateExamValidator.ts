@@ -26,22 +26,20 @@ export default class UpdateExamValidator {
   public schema = schema.create({
     nama_ujian: schema.string.optional({ trim: true }),
     waktu_mulai: schema.date.optional({
-      format: 'YYYY-MM-DD HH:mm:ss',
+      format: 'yyyy-MM-dd HH:mm:ss',
     }),
     waktu_selesai: schema.date.optional({
-      format: 'YYYY-MM-DD HH:mm:ss',
+      format: 'yyyy-MM-dd HH:mm:ss',
     }),
     durasi: schema.number.optional(),
     
-    trainer_id: schema.string.optional({ trim: true }, ([
+    user_id: schema.string.optional({ trim: true }, ([
       rules.uuid(),
       rules.exists({table: 'users', column: 'id'}),
-      rules.unique({table: 'exams', column: 'trainer_id'}),
     ])),
     class_id: schema.string.optional({ trim: true }, ([
       rules.uuid(),
       rules.exists({table: 'classes', column: 'id'}),
-      rules.unique({table: 'exams', column: 'exam_id'}),
     ])),
   })
 

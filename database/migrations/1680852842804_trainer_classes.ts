@@ -7,7 +7,7 @@ export default class extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.uuid('id').primary()
       table.uuid('class_id').references('classes.id').onUpdate('cascade').onDelete('cascade')
-      table.uuid('trainer_id').references('users.id').onUpdate('cascade').onDelete('cascade')
+      table.uuid('user_id').references('users.id').onUpdate('cascade').onDelete('cascade')
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
