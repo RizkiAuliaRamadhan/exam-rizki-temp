@@ -20,7 +20,7 @@ export default class QuestionBanksController {
         data
       })
     } catch (err) {
-      const message = "QuestionBankC23: " + err.message || err
+      const message = "QUESTION_BANK_CON_23: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -42,7 +42,7 @@ export default class QuestionBanksController {
         data
       })
     } catch (err) {
-      const message = "QuestionBankC45: " + err.message || err
+      const message = "QUESTION_BANK_CON_45: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -69,7 +69,7 @@ export default class QuestionBanksController {
         data
       })
     } catch (err) {
-      const message = "QuestionBankC72: " + err.message || err
+      const message = "QUESTION_BANK_CON_72: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -95,7 +95,7 @@ export default class QuestionBanksController {
         data
       })
     } catch (err) {
-      const message = "QuestionBankC98: " + err.message || err
+      const message = "QUESTION_BANK_CON_98: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -119,7 +119,7 @@ export default class QuestionBanksController {
         message: 'data berhasil dihapus',
       })
     } catch (err) {
-      const message = "QuestionBankC122: " + err.message || err
+      const message = "QUESTION_BANK_CON_122: " + err.message || err
       console.log(message, err);
 
       response.badRequest({

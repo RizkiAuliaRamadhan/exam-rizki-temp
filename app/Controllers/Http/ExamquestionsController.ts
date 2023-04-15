@@ -2,6 +2,7 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import ExamQuestion from 'App/Models/ExamQuestion';
 import Question from 'App/Models/Question';
 import CreateExamQuestionValidator from 'App/Validators/CreateExamQuestionValidator';
+import UpdateExamQuestionValidator from 'App/Validators/UpdateExamQuestionValidator';
 // import UpdateExamQuestionValidator from 'App/Validators/UpdateExamQuestionValidator';
 
 export default class ExamquestionsController {
@@ -18,7 +19,7 @@ export default class ExamquestionsController {
         data
       })
     } catch (err) {
-      const message = "EMPC29: " + err.message || err
+      const message = "EXAM_CON_21: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -81,7 +82,7 @@ export default class ExamquestionsController {
       }
 
     } catch (err) {
-      const message = "EMPC51: " + err.message || err
+      const message = "EXAM_CON_84: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -107,7 +108,7 @@ export default class ExamquestionsController {
         data
       })
     } catch (err) {
-      const message = "EMPC78: " + err.message || err
+      const message = "EXAM_CON_110: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -118,29 +119,29 @@ export default class ExamquestionsController {
     }
   }
 
-  public async update({ }: HttpContextContract) {
-    // try {
-    //   const { id } = params
+  public async update({params, response, request}: HttpContextContract) {
+    try {
+      const { id } = params
 
-    //   const payload = await request.validate(UpdateExamQuestionValidator)
+      const payload = await request.validate(UpdateExamQuestionValidator)
 
-    //   const data = await ExamQuestion.findOrFail(id)
-    //   await data.merge(payload).save()
+      const data = await ExamQuestion.findOrFail(id)
+      await data.merge(payload).save()
 
-    //   response.ok({
-    //     message: "berhasil mengubah data ExamQuestion",
-    //     data
-    //   })
-    // } catch (err) {
-    //   const message = "EMPC103: " + err.message || err
-    //   console.log(message, err);
+      response.ok({
+        message: "berhasil mengubah data ExamQuestion",
+        data
+      })
+    } catch (err) {
+      const message = "EXAM_CON_136: " + err.message || err
+      console.log(message, err);
 
-    //   response.badRequest({
-    //     message: "Gagal mengubah data ExamQuestion",
-    //     error: message,
-    //     error_data: err
-    //   })
-    // }
+      response.badRequest({
+        message: "Gagal mengubah data ExamQuestion",
+        error: message,
+        error_data: err
+      })
+    }
   }
 
   public async destroy({ params, response }: HttpContextContract) {
@@ -154,7 +155,7 @@ export default class ExamquestionsController {
         message: `data berhasil dihapus`,
       })
     } catch (err) {
-      const message = "EMPC125: " + err.message || err
+      const message = "EXAM_CON_158: " + err.message || err
       console.log(message, err);
 
       response.badRequest({

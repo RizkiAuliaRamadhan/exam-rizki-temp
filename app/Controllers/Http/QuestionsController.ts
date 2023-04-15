@@ -22,7 +22,7 @@ export default class QuestionsController {
         data
       })
     } catch (err) {
-      const message = "QuestionC23: " + err.message || err
+      const message = "QUESTION_CON_25: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -44,7 +44,7 @@ export default class QuestionsController {
         data
       })
     } catch (err) {
-      const message = "QuestionC45: " + err.message || err
+      const message = "QUESTION_CON_47: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -78,7 +78,7 @@ export default class QuestionsController {
       }
 
     } catch (err) {
-      const message = "QuestionC72: " + err.message || err
+      const message = "QUESTION_CON_81: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -112,7 +112,7 @@ export default class QuestionsController {
         })
       }
     } catch (err) {
-      const message = "QuestionC98: " + err.message || err
+      const message = "QUESTION_CON_115: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -134,7 +134,7 @@ export default class QuestionsController {
         message: 'data berhasil dihapus',
       })
     } catch (err) {
-      const message = "QuestionC122: " + err.message || err
+      const message = "QUESTION_CON_137: " + err.message || err
       console.log(message, err);
 
       response.badRequest({

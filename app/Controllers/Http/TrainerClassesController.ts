@@ -2,6 +2,7 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Class from 'App/Models/Class';
 import TrainerClass from 'App/Models/TrainerClass';
 import CreateTrainerClassValidator from 'App/Validators/CreateTrainerClassValidator';
+import UpdateTrainerClassValidator from 'App/Validators/UpdateTrainerClassValidator';
 
 export default class TrainerClassesController {
   public async index({ response, params }: HttpContextContract) {
@@ -18,7 +19,7 @@ export default class TrainerClassesController {
         data
       })
     } catch (err) {
-      const message = "EMPC78: " + err.message || err
+      const message = "TRAINERCLASS_CON_21: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -49,7 +50,7 @@ export default class TrainerClassesController {
         data
       })
     } catch (err) {
-      const message = "TrainerClassC47: " + err.message || err
+      const message = "TRAINERCLASS_CON_52: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -77,7 +78,7 @@ export default class TrainerClassesController {
         data
       })
     } catch (err) {
-      const message = "TrainerClassC72: " + err.message || err
+      const message = "TRAINERCLASS_CON_80: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -88,9 +89,31 @@ export default class TrainerClassesController {
     }
   }
 
-  public async edit({ }: HttpContextContract) { }
+  public async update({params, request, response}: HttpContextContract) {
+    try {
+      const { id } = params
 
-  public async update({ }: HttpContextContract) { }
+      const payload = await request.validate(UpdateTrainerClassValidator)
+
+      const data = await TrainerClass.findOrFail(id)
+
+      await data.merge(payload).save()
+
+      response.ok({
+        message: "berhasil mengubah data",
+        data
+      })
+    } catch (err) {
+      const message = "TRAINER_CLASS_CON_107: " + err.message || err
+      console.log(message, err);
+
+      response.badRequest({
+        message: "Gagal mengubah data TrainerClasss",
+        error: message,
+        error_data: err
+      })
+    }
+  }
 
   public async destroy({params, response}: HttpContextContract) {
     try {
@@ -105,7 +128,7 @@ export default class TrainerClassesController {
         message: 'data berhasil dihapus',
       })
     } catch (err) {
-      const message = "TrainerClassC122: " + err.message || err
+      const message = "TRAINERCLASS_CON_131: " + err.message || err
       console.log(message, err);
 
       response.badRequest({

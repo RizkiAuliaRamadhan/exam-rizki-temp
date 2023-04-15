@@ -11,29 +11,13 @@ export default class UsersController {
 
       const data = await User.create(payload)
 
-      // const token = await Token.create({
-      //     // id: "6bcf02ea-5825-41d4-91b1-112ca3e5f8e4",
-      //     userId: data.id,
-      //     token: Encryption.encrypt(data.id + data.createdAt),
-      //     type: "email_verification",
-      // });
-
-      // await Mail.send((message) => {
-      //     message
-      //         .from("test@email.com") // Replace with your own email
-      //         .to(data.email)
-      //         .subject("Email verification")
-      //         .text(token.token)
-      //         .htmlView("emails/verification", { token: token.token });
-      // });
-
       response.created({
         message: "Registered successfully",
         data
       })
 
     } catch (err) {
-      const message = "AUTHC36: " + err.message || err
+      const message = "USERCON20: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -52,7 +36,7 @@ export default class UsersController {
       const token = await auth.use('api').attempt(email, password)
       return token
     } catch (err) {
-      const message = "AUTHC36: " + err.message || err
+      const message = "USERCO39: " + err.message || err
       console.log(message, err);
 
       return response.unauthorized({
@@ -69,7 +53,7 @@ export default class UsersController {
       await auth.use('api').logout()
       response.ok({ message: "Berhasil logout" })
     } catch (err) {
-      const message = "AUTHC36: " + err.message || err
+      const message = "USERCO56: " + err.message || err
       console.log(message, err);
 
       return response.unauthorized({
@@ -92,7 +76,7 @@ export default class UsersController {
         data
       })
     } catch (err) {
-      const message = "EMPC78: " + err.message || err
+      const message = "EMPC79: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -118,7 +102,7 @@ export default class UsersController {
         data
       })
     } catch (err) {
-      const message = "EMPC78: " + err.message || err
+      const message = "EMPC105: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -154,7 +138,7 @@ export default class UsersController {
         }
       }
     } catch (err) {
-      const message = "EMPC78: " + err.message || err
+      const message = "EMPC141: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -176,7 +160,7 @@ export default class UsersController {
         message: 'data berhasil dihapus',
       })
     } catch (err) {
-      const message = "UserC122: " + err.message || err
+      const message = "USERCO163: " + err.message || err
       console.log(message, err);
 
       response.badRequest({

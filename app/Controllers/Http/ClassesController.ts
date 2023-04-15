@@ -8,14 +8,17 @@ export default class ClassesController {
     try {
       const data = await Class
         .query()
-        .select('*')
+        .select('id', 'nama_kelas', 'deskripsi')
+        .preload('trainerClass', query => query.select('user_id')
+          .preload('user', query => query.select('nama_lengkap'))
+        )
 
       response.ok({
         message: "Berhasil mengambil data Class",
         data
       })
     } catch (err) {
-      const message = "EMPC78: " + err.message || err
+      const message = "CLASS_CON_21: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -37,7 +40,7 @@ export default class ClassesController {
         data
       })
     } catch (err) {
-      const message = "ClassC45: " + err.message || err
+      const message = "CLASS_CON_43: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -55,7 +58,10 @@ export default class ClassesController {
       const data = await Class
         .query()
         .where('id', '=', id)
-        .select('nama_kelas', 'deskripsi')
+        .select('id', 'nama_kelas', 'deskripsi')
+        .preload('trainerClass', query => query.select('user_id')
+          .preload('user', query => query.select('nama_lengkap'))
+        )
 
       const result = response.ok({
         message: "Berhasil mengambil detail data Class",
@@ -71,7 +77,7 @@ export default class ClassesController {
       }
 
     } catch (err) {
-      const message = "EMPC78: " + err.message || err
+      const message = "CLASS_CON_78: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -83,7 +89,7 @@ export default class ClassesController {
   }
 
 
-  public async update({params, request, response}: HttpContextContract) {
+  public async update({ params, request, response }: HttpContextContract) {
     try {
       const { id } = params
 
@@ -98,7 +104,7 @@ export default class ClassesController {
         data
       })
     } catch (err) {
-      const message = "ClassC98: " + err.message || err
+      const message = "CLASS_CON_107: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -109,7 +115,7 @@ export default class ClassesController {
     }
   }
 
-  public async destroy({params, response}: HttpContextContract) {
+  public async destroy({ params, response }: HttpContextContract) {
     try {
       const { id } = params
 
@@ -120,7 +126,7 @@ export default class ClassesController {
         message: 'data berhasil dihapus',
       })
     } catch (err) {
-      const message = "ClassC122: " + err.message || err
+      const message = "CLASS_CON_129: " + err.message || err
       console.log(message, err);
 
       response.badRequest({

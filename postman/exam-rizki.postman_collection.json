@@ -1,0 +1,1126 @@
+{
+	"info": {
+		"_postman_id": "826475b7-b02a-4fc3-be1e-ccf0ff39ddbf",
+		"name": "exam-rizki",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama_lengkap\": \"Andi Asril\",\r\n    \"email\": \"andi@getnada.com\",\r\n    \"password\": \"123456\",\r\n    \"password_confirmation\": \"123456\",\r\n    \"jenis_kelamin\": \"l\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/register",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login trainer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"{{EMAIL_TRAINER}}\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"{{EMAIL_STUDENT}}\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/logout",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "SHOW user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/users/{{USER_ID_TRAINER}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users",
+								"{{USER_ID_TRAINER}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tanggal_lahir\": \"1999-08-20 07:00:00\",\r\n    \"alamat\": \"bekasi\",\r\n    \"no_telepon\": \"0852241235667\",\r\n    \"class_id\": \"{{CLASS_ID}}\",\r\n    \"role\": \"trainer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/users/{{USER_ID_TRAINER}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users",
+								"{{USER_ID_TRAINER}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tanggal_lahir\": \"2010-09-21 08:00:00\",\r\n    \"alamat\": \"Mamuju\",\r\n    \"no_telepon\": \"085641235667\",\r\n    \"class_id\": \"{{CLASS_ID}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/users/{{USER_ID_STUDENT}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users",
+								"{{USER_ID_STUDENT}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Classes",
+			"item": [
+				{
+					"name": "SHOW class",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/classes/{{CLASS_ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"classes",
+								"{{CLASS_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all class",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/classes",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"classes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE class",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama_kelas\": \"10 IPS\",\r\n    \"deskripsi\": \"Kelas 10 IPS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/classes",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"classes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE class",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deskripsi\": \"Kelas 10 IPA update\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/classes/{{CLASS_ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"classes",
+								"{{CLASS_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE class",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tanggal_lahir\": \"2010-09-21 08:00:00\",\r\n    \"alamat\": \"Mamuju\",\r\n    \"no_telepon\": \"085641235667\",\r\n    \"class_id\": \"{{CLASS_ID}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/classes/{{USER_ID_TRAINER}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"classes",
+								"{{USER_ID_TRAINER}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trainer Class",
+			"item": [
+				{
+					"name": "SHOW class trainer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/trainer-classes/{{TRAINER_CLASS_ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"trainer-classes",
+								"{{TRAINER_CLASS_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all class trainer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/classes/{{CLASS_ID}}/trainer-classes",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"classes",
+								"{{CLASS_ID}}",
+								"trainer-classes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE class trainer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"{{USER_ID_TRAINER}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/classes/{{CLASS_ID}}/trainer-classes",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"classes",
+								"{{CLASS_ID}}",
+								"trainer-classes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE class",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"class_id\": \"9d6236eb-0915-449b-a561-5c5e43a87f41\",\r\n    \"user_id\": \"47d65606-4946-495b-b5a1-194f154864a8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/trainer-classes/{{TRAINER_CLASS_ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"trainer-classes",
+								"{{TRAINER_CLASS_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE class trainer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tanggal_lahir\": \"2010-09-21 08:00:00\",\r\n    \"alamat\": \"Mamuju\",\r\n    \"no_telepon\": \"085641235667\",\r\n    \"class_id\": \"{{CLASS_ID}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/trainer-classes/{{TRAINER_CLASS_ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"trainer-classes",
+								"{{TRAINER_CLASS_ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "question bank",
+			"item": [
+				{
+					"name": "SHOW QUESTION BANK",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/question-banks/{{QUESTION_BANK_ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"question-banks",
+								"{{QUESTION_BANK_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all question-banks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/question-banks",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"question-banks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE question-bank",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"Kimia kelas 10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/question-banks",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"question-banks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE question-bank",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama\": \"TIK kelas 10 update\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/question-banks/{{QUESTION_BANK_ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"question-banks",
+								"{{QUESTION_BANK_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE question-bank",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tanggal_lahir\": \"2010-09-21 08:00:00\",\r\n    \"alamat\": \"Mamuju\",\r\n    \"no_telepon\": \"085641235667\",\r\n    \"class_id\": \"{{CLASS_ID}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/question-banks/{{QUESTION_BANK_ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"question-banks",
+								"{{QUESTION_BANK_ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "question",
+			"item": [
+				{
+					"name": "SHOW question",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/questions/{{QUESTION_ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"questions",
+								"{{QUESTION_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all question",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/question-banks/{{QUESTION_BANK_ID}}/questions",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"question-banks",
+								"{{QUESTION_BANK_ID}}",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE question",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"pertanyaan\": \"Apa kepanjangan dari TCP pada jaringan komputer?\",\r\n  \"pilihan_a\": \"Transmission Control Protocol\",\r\n  \"pilihan_b\": \"Internet Protocol\",\r\n  \"pilihan_c\": \"User Datagram Protocol\",\r\n  \"pilihan_d\": \"File Transfer Protocol\",\r\n  \"jawaban\": \"a\",\r\n  \"is_private\": false,\r\n  \"user_id\": \"{{USER_ID_TRAINER}}\",\r\n  \"question_bank_id\": \"{{QUESTION_BANK_ID}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/question-banks/{{QUESTION_BANK_ID}}/questions",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"question-banks",
+								"{{QUESTION_BANK_ID}}",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE question",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"pertanyaan\": \"Apa kepanjangan dari TCP pada jaringan komputer?\",\r\n  \"pilihan_a\": \"Transmission Control Protocol\",\r\n  \"pilihan_b\": \"Internet Protocol\",\r\n  \"pilihan_c\": \"User Datagram Protocol\",\r\n  \"pilihan_d\": \"File Transfer Protocol\",\r\n  \"jawaban\": \"a\",\r\n  \"is_private\": true,\r\n  \"user_id\": \"47d65606-4946-495b-b5a1-194f154864a8\",\r\n  \"question_bank_id\": \"01457dd2-acf9-4b3c-a567-95f2c391d772\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/questions/{{QUESTION_ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"questions",
+								"{{QUESTION_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE question",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tanggal_lahir\": \"2010-09-21 08:00:00\",\r\n    \"alamat\": \"Mamuju\",\r\n    \"no_telepon\": \"085641235667\",\r\n    \"class_id\": \"{{CLASS_ID}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/questions/{{QUESTION_ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"questions",
+								"{{QUESTION_ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "exam",
+			"item": [
+				{
+					"name": "GET all exams",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/classes/{{CLASS_ID}}/exams",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"classes",
+								"{{CLASS_ID}}",
+								"exams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SHOW exam",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/exams/{{EXAM_ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"exams",
+								"{{EXAM_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE exam",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nama_ujian\": \"Ulangan Harian TIK Kelas 10\",\r\n    \"waktu_mulai\": \"2023-03-20 08:00:00\",\r\n    \"waktu_selesai\": \"2023-03-20 11:05:00\",\r\n    \"durasi\": 65\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/classes/{{CLASS_ID}}/exams",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"classes",
+								"{{CLASS_ID}}",
+								"exams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE exam",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"waktu_mulai\": \"2023-04-15 21:00:00\",\r\n    \"waktu_selesai\": \"2023-04-15 23:05:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/exams/{{EXAM_ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"exams",
+								"{{EXAM_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE exam",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tanggal_lahir\": \"2010-09-21 08:00:00\",\r\n    \"alamat\": \"Mamuju\",\r\n    \"no_telepon\": \"085641235667\",\r\n    \"class_id\": \"{{CLASS_ID}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/exams/{{EXAM_ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"exams",
+								"{{EXAM_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Submit Exam",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/classes/{{CLASS_ID}}/exams/{{EXAM_ID}}/submit",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"classes",
+								"{{CLASS_ID}}",
+								"exams",
+								"{{EXAM_ID}}",
+								"submit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "exam question",
+			"item": [
+				{
+					"name": "SHOW exam questions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/exam-questions/{{EXAM_QUESTION_ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"exam-questions",
+								"{{EXAM_QUESTION_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET all exams questions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/exams/{{EXAM_ID}}/exam-questions",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"exams",
+								"{{EXAM_ID}}",
+								"exam-questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE exam QUESTION",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"question_id\": \"c2e2a82a-d739-11ed-abe3-325096b39f47\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/exams/{{EXAM_ID}}/exam-questions",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"exams",
+								"{{EXAM_ID}}",
+								"exam-questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE exam question",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"question_id\": \"d4fe1541-c245-4df2-ad61-75797f9141d1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/exam-questions/{{EXAM_QUESTION_ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"exam-questions",
+								"{{EXAM_QUESTION_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE exam question",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/exams/{{EXAM_ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"exams",
+								"{{EXAM_ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "exam answer",
+			"item": [
+				{
+					"name": "GET ALL exam answer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/exams/{{EXAM_ID}}/exam-answers",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"exams",
+								"{{EXAM_ID}}",
+								"exam-answers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE exam answer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jawaban\": \"c\",\r\n    \"is_ragu\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/exam-answers/{{EXAM_ANSWER_ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"exam-answers",
+								"{{EXAM_ANSWER_ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "exam result",
+			"item": [
+				{
+					"name": "GET all exam results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/exam-results",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"exam-results"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SHOW exam result",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/exam-results/{{EXAM_RESULT_ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"exam-results",
+								"{{EXAM_RESULT_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE question-bank",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"is_finished\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/exam-results/{{EXAM_RESULT_ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"exam-results",
+								"{{EXAM_RESULT_ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE question-bank",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tanggal_lahir\": \"2010-09-21 08:00:00\",\r\n    \"alamat\": \"Mamuju\",\r\n    \"no_telepon\": \"085641235667\",\r\n    \"class_id\": \"{{CLASS_ID}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/exam-results/{{EXAM_RESULT_ID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"exam-results",
+								"{{EXAM_RESULT_ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

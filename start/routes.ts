@@ -84,4 +84,20 @@ Route.group(() => {
     'update': 'checkRole:trainer',
     'destroy': 'checkRole:trainer'
   })
+
+  
+  Route.shallowResource('exams.exam-answers', 'ExamAnswersController').apiOnly().middleware({
+    'index': 'checkRole:student',
+    'update': 'checkRole:student',
+  })
+
+  Route.put('/classes/:class_id/exams/:exam_id/submit', 'ExamsController.submit').middleware('checkRole:student')
+
+  Route.shallowResource('/exam-results', 'ExamResultsController').apiOnly().middleware({
+    'index': 'checkRole:student,trainer,admin',
+    'show': 'checkRole:student,trainer,admin',
+    'update': 'checkRole:trainer,admin',
+    'destroy': 'checkRole:trainer,admin'
+  })
+ 
 }).middleware(['auth'])

@@ -27,15 +27,14 @@ export default class UpdateExamAnswerValidator {
     jawaban: schema.string.optional({trim: true}, ([
       rules.maxLength(1)
     ])),
+    is_ragu:schema.boolean.optional(),
     student_id: schema.string.optional({ trim: true }, ([
       rules.uuid(),
-      rules.exists({table: 'users', column: 'id'}),
-      rules.unique({table: 'exam_answers', column: 'student_id'}),
+      rules.exists({table: 'users', column: 'id'})
     ])),
     exam_question_id: schema.string.optional({ trim: true }, ([
       rules.uuid(),
-      rules.exists({table: 'exam_questions', column: 'id'}),
-      rules.unique({table: 'exam_answers', column: 'exam_question_id'}),
+      rules.exists({table: 'exam_questions', column: 'id'})
     ])),
   })
 

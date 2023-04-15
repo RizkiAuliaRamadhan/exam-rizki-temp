@@ -21,7 +21,7 @@ export default class ExamsController {
         data
       })
     } catch (err) {
-      const message = "EMPC29: " + err.message || err
+      const message = "EXAM_CON_24: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -46,7 +46,7 @@ export default class ExamsController {
         data
       })
     } catch (err) {
-      const message = "EMPC51: " + err.message || err
+      const message = "EXAM_CON_49: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -163,7 +163,7 @@ export default class ExamsController {
         }
       }
     } catch (err) {
-      const message = "EMPC78: " + err.message || err
+      const message = "EXAM_CON_166: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -188,7 +188,7 @@ export default class ExamsController {
         data
       })
     } catch (err) {
-      const message = "EMPC103: " + err.message || err
+      const message = "EXAM_CON_191: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -210,7 +210,7 @@ export default class ExamsController {
         message: `data berhasil dihapus`,
       })
     } catch (err) {
-      const message = "EMPC125: " + err.message || err
+      const message = "EXAM_CON_213: " + err.message || err
       console.log(message, err);
 
       response.badRequest({
@@ -220,4 +220,98 @@ export default class ExamsController {
       })
     }
   }
+
+  public async submit({ response, auth, params }: HttpContextContract) {
+    try {
+      const examResault = await ExamResult
+        .query()
+        .select('id', 'is_finished')
+        .where('exam_id', '=', params.exam_id)
+        .andWhere('user_id', '=', auth.user!.id)
+
+      let is_finished: boolean = false
+      examResault.map(value => {
+        is_finished = value.is_finished
+      })
+
+      if (is_finished) {
+        response.badRequest({
+          message: 'Anda sudah submit exam'
+        })
+      } else {
+        const examAnswer = await ExamAnswer
+          .query()
+          .select('id', 'jawaban', 'is_ragu', 'exam_question_id')
+          .where('user_id', '=', auth.user!.id)
+          .preload('examQuestion',
+            query => query.select('id', 'question_id', 'exam_id',).where('exam_id', '=', params.exam_id)
+              .preload('soal', query => query.select('jawaban'))
+              .preload('exam', query => query.select('waktu_selesai'))
+          )
+
+        let nilai: number = 0
+        let waktu_selesai
+        let is_ragu: boolean = false
+        let cek_soal: boolean = false
+
+        examAnswer.map(value => {
+          const valueJson = value.toJSON()
+          waktu_selesai = valueJson.examQuestion.exam.waktu_selesai
+
+          if (value.is_ragu == true) {
+            is_ragu = true
+          }
+
+          if (value.jawaban.length == 0) {
+            cek_soal = true
+          }
+
+          if (valueJson.jawaban === valueJson.examQuestion.soal.jawaban) {
+            nilai += 10
+          }
+        })
+
+        if (waktu_selesai <= DateTime.now()) {
+          console.log('waktu anda telah habis');
+        } else if (cek_soal) {
+          response.badRequest({
+            message: "Soal masih ada yang belum dijawab"
+          })
+        } else if (is_ragu) {
+          response.badRequest({
+            message: "Jawaban masih ada yang ragu, cek lagi ya"
+          })
+        } else {
+
+          let examResaultId: string = ''
+
+          examResault.map(value => {
+            examResaultId = value.toJSON().id
+          })
+
+          const data = await ExamResult.findOrFail(examResaultId)
+          await data.merge({
+            waktu_selesai: DateTime.now(),
+            nilai,
+            is_finished: true
+          }).save()
+
+          response.ok({
+            message: "Berhasil submit exam",
+            data
+          })
+        }
+      }
+    } catch (err) {
+      const message = "EXAM_CON_306: " + err.message || err
+      console.log(message, err);
+
+      response.badRequest({
+        message: "Gagal submit ujian",
+        error: message,
+        error_data: err
+      })
+    }
+  }
+
 }

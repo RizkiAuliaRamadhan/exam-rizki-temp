@@ -25,22 +25,20 @@ export default class UpdateExamResultValidator {
    */
   public schema = schema.create({
     waktu_mulai: schema.date.optional({
-      format: 'YYYY-MM-DD HH:mm:ss',
+      format: 'yyyy-MM-DD HH:mm:ss',
     }),
     waktu_selesai: schema.date.optional({
-      format: 'YYYY-MM-DD HH:mm:ss',
+      format: 'yyyy-MM-DD HH:mm:ss',
     }),
     nilai: schema.number.optional(),
     is_finished: schema.boolean.optional(),
     exam_id: schema.string.optional({ trim: true }, ([
       rules.uuid(),
       rules.exists({table: 'exams', column: 'id'}),
-      rules.unique({table: 'exam_results', column: 'exam_id'}),
     ])),
     student_id: schema.string.optional({ trim: true }, ([
       rules.uuid(),
       rules.exists({table: 'users', column: 'id'}),
-      rules.unique({table: 'exam_results', column: 'student_id'}),
     ])),
   })
 
