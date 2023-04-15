@@ -57,6 +57,31 @@ export default class extends BaseSeeder {
         examId: "7f3b847c-d73c-11ed-8c16-325096b39f47",
         questionId: "c2e2a596-d739-11ed-b35a-325096b39f47",
       },
+      {
+        id: "1fcba0e6-6afa-4d85-b388-651cf5358dd5",
+        examId: "7f3b847c-d73c-11ed-8c16-325096b39f47",
+        questionId: "a6a3b4aa-4d39-4086-a1a6-c8b9f867d04a",
+      },
+      {
+        id: "da543cfd-2583-4406-a472-cb7998542033",
+        examId: "7f3b847c-d73c-11ed-8c16-325096b39f47",
+        questionId: "efad28df-5f4b-4f4d-8629-b6e9b26de89d",
+      },
+      {
+        id: "ba53096a-0a75-4239-95d0-06a852e77ede",
+        examId: "7f3b847c-d73c-11ed-8c16-325096b39f47",
+        questionId: "eeafe89c-38c1-4295-8393-d69f8df97662",
+      },
+      {
+        id: "70952f7f-52bc-482b-a980-58ad7244d4c0",
+        examId: "7f3b847c-d73c-11ed-8c16-325096b39f47",
+        questionId: "f73225d7-90c9-4b89-9c78-437b37fde981",
+      },
+      {
+        id: "87cf272e-9056-4a68-95c2-991aafd14019",
+        examId: "7f3b847c-d73c-11ed-8c16-325096b39f47",
+        questionId: "9bcbe151-5b44-4e0e-b03a-20588ad7bde4",
+      },
 
 
       {

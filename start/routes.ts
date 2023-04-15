@@ -40,7 +40,7 @@ Route.group(() => {
   Route.shallowResource('/classes', 'ClassesController').apiOnly().middleware({
     'show': 'checkRole:*',
     'index': 'checkRole:admin,trainer',
-    'create': 'checkRole:admin,trainer',
+    'store': 'checkRole:admin,trainer',
     'update': 'checkRole:admin,trainer',
     'destroy': 'checkRole:admin,trainer'
   })
@@ -48,7 +48,7 @@ Route.group(() => {
   Route.shallowResource('classes.trainer-classes', 'TrainerClassesController').apiOnly().middleware({
     'show': 'checkRole:trainer',
     'index': 'checkRole:trainer',
-    'create': 'checkRole:trainer',
+    'store': 'checkRole:trainer',
     'update': 'checkRole:trainer',
     'destroy': 'checkRole:trainer'
   })
@@ -56,7 +56,7 @@ Route.group(() => {
   Route.shallowResource('/question-banks', 'QuestionBanksController').apiOnly().middleware({
     'show': 'checkRole:trainer',
     'index': 'checkRole:trainer',
-    'create': 'checkRole:trainer',
+    'store': 'checkRole:trainer',
     'update': 'checkRole:trainer',
     'destroy': 'checkRole:trainer'
   })
@@ -64,23 +64,23 @@ Route.group(() => {
   Route.shallowResource('question-banks.questions', 'QuestionsController').apiOnly().middleware({
     'show': 'checkRole:trainer',
     'index': 'checkRole:trainer',
-    'create': 'checkRole:trainer',
+    'store': 'checkRole:trainer',
     'update': 'checkRole:trainer',
     'destroy': 'checkRole:trainer'
   })
 
   Route.shallowResource('classes.exams', 'ExamsController').apiOnly().middleware({
-    'show': 'checkRole:trainer',
-    'index': 'checkRole:trainer',
-    'create': 'checkRole:trainer',
+    'show': 'checkRole:trainer,student',
+    'index': 'checkRole:trainer,student',
+    'store': 'checkRole:trainer',
     'update': 'checkRole:trainer',
     'destroy': 'checkRole:trainer'
   })
 
   Route.shallowResource('exams.exam-questions', 'ExamQuestionsController').apiOnly().middleware({
     'show': 'checkRole:trainer',
-    'index': 'checkRole:trainer,student',
-    'create': 'checkRole:trainer',
+    'index': 'checkRole:trainer',
+    'store': 'checkRole:trainer',
     'update': 'checkRole:trainer',
     'destroy': 'checkRole:trainer'
   })

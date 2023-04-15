@@ -68,6 +68,66 @@ export default class extends BaseSeeder {
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },
       {
+        id: "a6a3b4aa-4d39-4086-a1a6-c8b9f867d04a",
+        pertanyaan: "Apa itu internet?",
+        pilihan_a: "Sebuah program komputer",
+        pilihan_b: "Jaringan komputer global",
+        pilihan_c: "Sebuah situs web",
+        pilihan_d: "Sebuah sistem operasi",
+        jawaban: "b",
+        is_private: false,
+        userId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
+        questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
+      },
+      {
+        id: "1e7c38f2-87d8-4a45-b053-e2951c6570e5",
+        pertanyaan: "Apa perbedaan antara RAM dan hard disk?",
+        pilihan_a: "RAM dapat menyimpan data tanpa listrik, sedangkan hard disk tidak",
+        pilihan_b: "RAM lebih cepat dalam mengakses data, sedangkan hard disk lebih lambat",
+        pilihan_c: "RAM berfungsi sebagai penyimpanan jangka panjang, sedangkan hard disk berfungsi sebagai penyimpanan jangka pendek",
+        pilihan_d: "RAM lebih murah dari hard disk",
+        jawaban: "b",
+        is_private: false,
+        userId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
+        questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
+      },
+      {
+        id: "efad28df-5f4b-4f4d-8629-b6e9b26de89d",
+        pertanyaan: "Apa fungsi dari operating system pada komputer?",
+        pilihan_a: "Mengubah sinyal digital menjadi sinyal analog",
+        pilihan_b: "Mengatur aliran data di antara perangkat keras komputer",
+        pilihan_c: "Mengendalikan penggunaan memori dan CPU",
+        pilihan_d: "Mengontrol koneksi internet",
+        jawaban: "c",
+        is_private: false,
+        userId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
+        questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
+      },
+      {
+        id: "9bcbe151-5b44-4e0e-b03a-20588ad7bde4",
+        pertanyaan: "Apa perbedaan antara antivirus dan firewall?",
+        pilihan_a: "Antivirus melindungi komputer dari virus, sedangkan firewall melindungi dari hacker",
+        pilihan_b: "Antivirus melindungi jaringan internet, sedangkan firewall melindungi dari virus",
+        pilihan_c: "Antivirus dan firewall memiliki fungsi yang sama",
+        pilihan_d: "Antivirus melindungi komputer dari hacker, sedangkan firewall melindungi dari virus",
+        jawaban: "a",
+        is_private: true,
+        userId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
+        questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
+      },
+      {
+        id: "f73225d7-90c9-4b89-9c78-437b37fde981",
+        pertanyaan: "Apa itu software?",
+        pilihan_a: "Bagian fisik dari komputer, seperti keyboard dan mouse",
+        pilihan_b: "Program yang memungkinkan komputer untuk berfungsi",
+        pilihan_c: "Kode yang ditulis oleh programmer",
+        pilihan_d: "Prosesor atau CPU",
+        jawaban: "b",
+        is_private: true,
+        userId: "47d65606-4946-495b-b5a1-194f154864a8", //rizki
+        questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
+      },
+      {
         id: "0f13464f-8770-42d4-bd90-d66163f33b6c",
         pertanyaan: "Jaringan komputer yang mencakup area yang lebih besar dari LAN disebut...",
         pilihan_a: "LAN",
@@ -129,7 +189,7 @@ export default class extends BaseSeeder {
       },
 
 
-      
+
 
       {
         id: "56d569ae-d4a9-4da5-a44f-535dec48a6e6",
@@ -188,6 +248,66 @@ export default class extends BaseSeeder {
         pilihan_d: "Volt (V)",
         jawaban: "a",
         is_private: false,
+        userId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
+        questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
+      },
+      {
+        id: "eeafe89c-38c1-4295-8393-d69f8df97662",
+        pertanyaan: "Apa itu Internet?",
+        pilihan_a: "Jaringan komputer terbesar di dunia",
+        pilihan_b: "Program untuk membuat presentasi",
+        pilihan_c: "Proses untuk mengedit video",
+        pilihan_d: "Alat untuk menyimpan file",
+        jawaban: "a",
+        is_private: false,
+        userId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
+        questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
+      },
+      {
+        id: "ab6a25d1-1e54-49c2-8a17-966cf12f87e4",
+        pertanyaan: "Apa itu website?",
+        pilihan_a: "Program untuk mengolah data",
+        pilihan_b: "Media sosial untuk berbagi foto",
+        pilihan_c: "Halaman atau kumpulan halaman yang bisa diakses di internet",
+        pilihan_d: "Lingkungan untuk menggambar digital",
+        jawaban: "c",
+        is_private: false,
+        userId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
+        questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
+      },
+      {
+        id: "8e607e5e-a2ca-4bf1-b9ad-156d1a789f3a",
+        pertanyaan: "Apa itu browser?",
+        pilihan_a: "Program untuk mengedit foto",
+        pilihan_b: "Program untuk membuat lembar kerja",
+        pilihan_c: "Program untuk menjelajah internet",
+        pilihan_d: "Program untuk membuat video",
+        jawaban: "c",
+        is_private: true,
+        userId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
+        questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
+      },
+      {
+        id: "7383cfa3-72b3-46de-aca6-67285f207a8c",
+        pertanyaan: "Apa itu perangkat lunak pengolah kata?",
+        pilihan_a: "Program untuk membuat grafik dan diagram",
+        pilihan_b: "Program untuk mengolah angka",
+        pilihan_c: "Program untuk membuat presentasi",
+        pilihan_d: "Program untuk membuat dan mengedit dokumen",
+        jawaban: "d",
+        is_private: true,
+        userId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
+        questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
+      },
+      {
+        id: "4ee37bf6-15d8-4afd-a3be-c5cea969c1fe",
+        pertanyaan: "Apa itu Sistem Operasi?",
+        pilihan_a: "Program untuk membuat gambar vektor",
+        pilihan_b: "Program untuk mengolah angka",
+        pilihan_c: "Program yang mengatur seluruh operasi pada komputer",
+        pilihan_d: "Program untuk membuat animasi 3D",
+        jawaban: "c",
+        is_private: true,
         userId: "790b4327-0ec7-4e29-b8a9-31a9bbdb1d76", //tolib
         questionBankId: "01457dd2-acf9-4b3c-a567-95f2c391d772", //tik kelas 10
       },

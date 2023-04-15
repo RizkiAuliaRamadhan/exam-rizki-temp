@@ -27,12 +27,10 @@ export default class CreateExamQuestionValidator {
     question_id: schema.string({ trim: true }, ([
       rules.uuid(),
       rules.exists({table: 'questions', column: 'id'}),
-      rules.unique({table: 'exam_questions', column: 'question_id'}),
     ])),
-    exam_id: schema.string({ trim: true }, ([
+    examId: schema.string.optional({ trim: true }, ([
       rules.uuid(),
       rules.exists({table: 'exams', column: 'id'}),
-      rules.unique({table: 'exam_questions', column: 'exam_id'}),
     ])),
   })
 

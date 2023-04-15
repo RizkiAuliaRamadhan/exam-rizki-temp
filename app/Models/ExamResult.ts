@@ -27,7 +27,7 @@ export default class ExamResult extends BaseModel {
   public updatedAt: DateTime
 
   @column()
-  public studentId: string
+  public userId: string
 
   @belongsTo(() => User)
   public student: BelongsTo<typeof User>

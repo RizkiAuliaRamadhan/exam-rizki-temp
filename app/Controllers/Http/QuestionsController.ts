@@ -10,7 +10,7 @@ export default class QuestionsController {
 
       const data = await Question
         .query()
-        .select('pertanyaan', 'pilihan_a', 'pilihan_b', 'pilihan_c', 'pilihan_d', 'jawaban', 'is_private', 'question_bank_id', 'user_id')
+        .select('id', 'pertanyaan', 'pilihan_a', 'pilihan_b', 'pilihan_c', 'pilihan_d', 'jawaban', 'is_private', 'question_bank_id', 'user_id')
         .where('user_id', '=', id_auth)
         .where('question_bank_id', '=', params.question_bank_id)
         .orWhere('is_private', '=', false)

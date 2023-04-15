@@ -7,8 +7,9 @@ export default class extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.uuid('id').primary()
       table.string('jawaban')
+      table.boolean('is_ragu')
 
-      table.uuid('student_id').references('users.id').onUpdate('cascade').onDelete('cascade')
+      table.uuid('user_id').references('users.id').onUpdate('cascade').onDelete('cascade')
       table.uuid('exam_question_id').references('exam_questions.id').onUpdate('cascade').onDelete('cascade')
 
       /**

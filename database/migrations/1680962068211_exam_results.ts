@@ -11,7 +11,7 @@ export default class extends BaseSchema {
       table.integer('nilai')
       table.boolean('is_finished').defaultTo(false)
 
-      table.uuid('student_id').references('users.id').onUpdate('cascade').onDelete('cascade')
+      table.uuid('user_id').references('users.id').onUpdate('cascade').onDelete('cascade')
       table.uuid('exam_id').references('exams.id').onUpdate('cascade').onDelete('cascade')
 
       /**

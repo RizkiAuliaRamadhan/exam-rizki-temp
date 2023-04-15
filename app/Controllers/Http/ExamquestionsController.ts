@@ -1,7 +1,7 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import ExamQuestion from 'App/Models/ExamQuestion';
-// import Question from 'App/Models/Question';
-// import CreateExamQuestionValidator from 'App/Validators/CreateExamQuestionValidator';
+import Question from 'App/Models/Question';
+import CreateExamQuestionValidator from 'App/Validators/CreateExamQuestionValidator';
 // import UpdateExamQuestionValidator from 'App/Validators/UpdateExamQuestionValidator';
 
 export default class ExamquestionsController {
@@ -29,29 +29,67 @@ export default class ExamquestionsController {
     }
   }
 
-  public async store({ }: HttpContextContract) {
-    // try {
-    //   const user_id = auth.user!.id;
-    //   const payload = await request.validate(CreateExamQuestionValidator)
-    //   payload['class_id'] = params.class_id
-    //   payload['user_id'] = user_id
+  public async store({ auth, request, params, response }: HttpContextContract) {
+    try {
+      const user_id = auth.user!.id;
 
-    //   const data = await ExamQuestion.create(payload)
+      const questionIdParams = request.body().question_id
 
-    //   response.created({
-    //     message: "berhasil menambahkan data ExamQuestion",
-    //     data
-    //   })
-    // } catch (err) {
-    //   const message = "EMPC51: " + err.message || err
-    //   console.log(message, err);
+      const question = await Question
+        .query()
+        .where('id', '=', questionIdParams)
 
-    //   response.badRequest({
-    //     message: "Gagal menambahkan data ExamQuestions",
-    //     error: message,
-    //     error_data: err
-    //   })
-    // }
+      const examQuestion = await ExamQuestion
+        .query()
+        .select('id', 'question_id')
+        .where('exam_id', '=', params.exam_id)
+
+      let questionId: String
+      let userIdQUestion: String
+      let is_private: Boolean
+
+      examQuestion.map(value => {
+        questionId = value.questionId
+      })
+
+      question.map(value => {
+        userIdQUestion = value.userId
+        is_private = value.is_private
+      })
+
+      if (userIdQUestion! === user_id || is_private! == false) {
+        if (questionId! !== questionIdParams) {
+          const payload = await request.validate(CreateExamQuestionValidator)
+          payload['exam_id'] = params.exam_id
+
+          const data = await ExamQuestion.create(payload)
+          console.log(payload);
+
+          response.created({
+            message: "berhasil menambahkan data Exam",
+            data
+          })
+        }else {
+          response.badRequest({
+            message: "Gagal menambahkan data ExamQuestions, Soal sudah ada"
+          })
+        }
+      } else {
+        response.badRequest({
+          message: "Gagal menambahkan data ExamQuestions, Soal harus punya sendiri atau is_private bernilai false"
+        })
+      }
+
+    } catch (err) {
+      const message = "EMPC51: " + err.message || err
+      console.log(message, err);
+
+      response.badRequest({
+        message: "Gagal menambahkan data ExamQuestions",
+        error: message,
+        error_data: err
+      })
+    }
   }
 
   public async show({ params, response }: HttpContextContract) {

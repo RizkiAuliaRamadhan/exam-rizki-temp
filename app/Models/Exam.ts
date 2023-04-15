@@ -19,7 +19,7 @@ export default class Exam extends BaseModel {
   public waktu_selesai: DateTime
 
   @column()
-  public durasi: Number
+  public durasi: number
 
   @column()
   public userId: string
