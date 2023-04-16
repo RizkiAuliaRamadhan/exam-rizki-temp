@@ -85,7 +85,6 @@ Route.group(() => {
     'destroy': 'checkRole:trainer'
   })
 
-  
   Route.shallowResource('exams.exam-answers', 'ExamAnswersController').apiOnly().middleware({
     'index': 'checkRole:student',
     'update': 'checkRole:student',
