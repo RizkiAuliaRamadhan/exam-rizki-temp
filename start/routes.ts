@@ -100,3 +100,11 @@ Route.group(() => {
   })
  
 }).middleware(['auth'])
+
+// "dev": "node ace serve --watch",
+//     "build": "node ace build --production",
+//     "postinstall": "node fixKecoa/copy.js",
+//     "prebuild": "node ace migration:run && node ace db:seed",
+//     "postbuild": "cp -r docs build/",
+//     "start": "node build/server.js",
+//     "test": "node ace test"
