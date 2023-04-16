@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "node ace serve --watch",
     "build": "node ace build --production",
-    "start": "node server.js",
+    "postinstall": "node fixKecoa/copy.js",
+    "prebuild": "node ace migration:run && node ace db:seed",
+    "postbuild": "cp -r docs build/",
+    "start": "node build/server.js",
     "test": "node ace test"
   },
   "devDependencies": {
