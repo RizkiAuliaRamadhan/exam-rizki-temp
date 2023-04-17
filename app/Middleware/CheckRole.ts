@@ -8,7 +8,7 @@ export default class CheckRole {
 
     if (user?.role === 'student') {
       if (allowedRoles!.indexOf('*') + 1) {
-        if (params.id !== user?.id && route?.name === 'users.show') {
+        if (params.id !== user?.id && (route?.name === 'users.show' || route?.name === 'users.update')) {
           console.log('sini');
           
           return response.status(403).json({ message: 'You are not authorized to access this data' })

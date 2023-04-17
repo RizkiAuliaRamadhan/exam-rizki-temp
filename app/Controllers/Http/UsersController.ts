@@ -68,7 +68,7 @@ export default class UsersController {
     try {
       const data = await User
         .query()
-        .select('id', 'email', 'nama_lengkap', 'no_telepon', 'class_id')
+        .select('id', 'email', 'nama_lengkap', 'no_telepon', 'class_id', 'role')
         .preload('class', query => query.select('id', 'nama_kelas', 'deskripsi'))
 
       response.ok({

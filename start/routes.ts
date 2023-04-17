@@ -32,7 +32,7 @@ Route.group(() => {
 
   Route.shallowResource('users', 'UsersController').apiOnly().middleware({
     'show': 'checkRole:*',
-    'index': 'checkRole:admin,trainer',
+    'index': 'checkRole:*',
     'update': 'checkRole:*',
     'destroy': 'checkRole:admin'
   })
